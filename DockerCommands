@@ -1,0 +1,15 @@
+docker pull --> pull the image
+docker run --> pull the image + create the container 
+
+docker images
+docker ps 
+docker ps -a
+docker start <cid>
+docker restart <cid>
+docker stop <cid>
+docker rm <cid>
+docker rmi <cid>
+docker logs <cid>
+docker run -d -p 80:80 --name selenium <imagename>
+
+
