@@ -9,7 +9,9 @@ docker restart <cid>
 docker stop <cid>
 docker rm <cid>
 docker rmi <cid>
+docker kill <cid>
 docker logs <cid>
 docker run -d -p 80:80 --name selenium <imagename>
+docker system prune -a
 
 

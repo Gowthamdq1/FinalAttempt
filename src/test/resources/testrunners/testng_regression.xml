@@ -6,17 +6,20 @@
 		<listener class-name="com.qa.opencart.listeners.AnnotationTransformer"/>
 	</listeners>
 
-	<test name="LoginPage Test">
+	<test name="LoginPage Test chrome">
+	<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
 	</test>
-	<!--<test name="AccountsPageTest">
+	
+	<test name="AccountsPageTest firefox">
+	<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
-	 <test name="ProductPageInfoTest">
+	<!-- <test name="ProductPageInfoTest">
 		<classes>
 			<class name="com.qa.opencart.tests.ProductPageInfoTest" />
 		</classes>
