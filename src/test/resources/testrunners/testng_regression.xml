@@ -8,9 +8,10 @@
 		<listener class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 	</listeners>
 
-	<test name="LoginPage Test chrome 90.0">
+	<test name="LoginPage Test chrome 119.0">
 		<parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="119.0" />
+		<parameter name="testcasename" value="LoginPage Test" />
 
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
