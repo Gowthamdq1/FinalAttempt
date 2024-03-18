@@ -20,6 +20,12 @@ public class OptionsManager {
 	public ChromeOptions getChromeOptions() {
 		co = new ChromeOptions();
 		//co.addArguments("--remote-allow-origins=*");
+		
+		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			co.setBrowserVersion(prop.getProperty("browserversion"));
+			co.setCapability("browsername","chrome");
+			co.setCapability("enableVNC", true);
+		}
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim())) {
 			System.out.println("Running chrome in headless");
 			co.addArguments("--headless");}
@@ -30,7 +36,12 @@ public class OptionsManager {
 
 	public FirefoxOptions getfirefoxOptions() {
 		fo = new FirefoxOptions();
-
+		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			fo.setBrowserVersion(prop.getProperty("browserversion"));
+			fo.setCapability("browsername","firefox");
+			fo.setCapability("enableVNC", true);
+		}
+		
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim()))
 			fo.addArguments("--headless");
 		if (Boolean.parseBoolean(prop.getProperty("incognito").trim()))
