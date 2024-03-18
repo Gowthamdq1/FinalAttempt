@@ -25,7 +25,7 @@ public class OptionsManager {
 			co.setBrowserVersion(prop.getProperty("browserversion").trim());
 			co.setCapability("browsername","chrome");
 			co.setCapability("enableVNC", true);
-			co.setCapability("name", prop.getProperty("testcasename"));
+			co.setCapability("name", prop.getProperty("testcasename	"));
 		}
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim())) {
 			System.out.println("Running chrome in headless");
