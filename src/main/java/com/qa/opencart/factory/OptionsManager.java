@@ -1,5 +1,7 @@
 package com.qa.opencart.factory;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,9 +25,14 @@ public class OptionsManager {
 		
 		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
 			co.setBrowserVersion(prop.getProperty("browserversion").trim());
-			co.setCapability("browsername","chrome");
-			co.setCapability("enableVNC", true);
+			co.setCapability("browserName","chrome");
 			co.setCapability("name", prop.getProperty("testcasename	"));
+			
+			Map<String, Object> selenoidOptions = new HashMap<>();
+			selenoidOptions.put("screenResolution", "1280x1024x24");
+			selenoidOptions.put("enableVNC", true);
+			//selenoidOptions.put("name", prop.getProperty("testname"));
+			co.setCapability("selenoid:options", selenoidOptions);
 		}
 		if (Boolean.parseBoolean(prop.getProperty("headless").trim())) {
 			System.out.println("Running chrome in headless");
